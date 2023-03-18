@@ -35,7 +35,7 @@ export const ColorModeContextProvider: React.FC<PropsWithChildren> = ({
 
   const setColorMode = () => {
     if (mode === "light") {
-      setMode("dark");
+      setMode("light");
     } else {
       setMode("light");
     }
@@ -48,7 +48,7 @@ export const ColorModeContextProvider: React.FC<PropsWithChildren> = ({
         mode,
       }}
     >
-      <ThemeProvider theme={ LightTheme }>
+      <ThemeProvider theme={mode === "light" ? LightTheme : DarkTheme}>
         {children}
       </ThemeProvider>
     </ColorModeContext.Provider>
